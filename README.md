@@ -28,7 +28,7 @@ private.myPrivateMethod = function(){
   console.log('consumers dont need me but i still need to be tested')
 }
 
-public.myPublicMethod. function(){
+public.myPublicMethod = function(){
   private.myPrivateMethod();
 }
 
@@ -38,7 +38,7 @@ module.exports = encapsulate({private: private, public: public});
 In the normal execution of your app:
 
 ```js
-encapsulate({private: private, public: public});
+var klazz = encapsulate({private: private, public: public});
 /**
 yeilds: {myPublicMethod: Function}
 **/
@@ -47,7 +47,7 @@ yeilds: {myPublicMethod: Function}
 When process.env.NODE_ENV is set to 'test':
 
 ```js
-encapsulate({private: private, public: public});
+var klazz = encapsulate({private: private, public: public});
 /**
 yeilds: {myPrivateMethod: Function, myPublicMethod: Function}
 **/

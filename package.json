@@ -1,0 +1,32 @@
+{
+  "name": "encapsulation",
+  "version": "0.0.1",
+  "description": "set private and public methods but expose private methods to the test environment",
+  "main": "index.js",
+  "scripts": {
+    "test": "_mocha --recursive  --timeout 35000  test/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lwhiteley/node-encapsulation.git"
+  },
+  "keywords": [
+    "encapsulation",
+    "testable",
+    "test"
+  ],
+  "author": "Layton Whiteley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lwhiteley/node-encapsulation/issues"
+  },
+  "homepage": "https://github.com/lwhiteley/node-encapsulation#readme",
+  "dependencies": {
+    "lodash": "^3.10.1"
+  },
+  "devDependencies": {
+    "chai": "^3.4.0",
+    "mocha": "^2.3.3",
+    "sinon": "^1.17.2"
+  }
+}

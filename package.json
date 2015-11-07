@@ -1,6 +1,6 @@
 {
   "name": "encapsulation",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "set private and public methods but expose private methods to the test environment",
   "main": "index.js",
   "scripts": {

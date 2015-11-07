@@ -65,6 +65,8 @@ require('encapsulation').configure({env:'testing'});
 ```
 
 ### Notes
+- Be careful not to use the same property names for public and private properties
+- Public properties take precedence over private properties
 - this is an experiment
 - pull requests are welcome
 - report issues if you see any (fix it if possible :-) )

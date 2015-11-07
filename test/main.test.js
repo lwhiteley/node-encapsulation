@@ -24,13 +24,16 @@ describe('node-encapsulation suite: ', function () {
 
             var public = {publicFunc: function(){}};
             var private = {privateFunc: function(){}};
-
-            assert.equal(service.build({public: public, private: private}), public);
+            var result = service.build({public: public, private: private});
+            assert.equal(result, public);
+            expect(_.keys(result)).to.have.length(1);
         });
 
         it('should return empty module when only private properties passed and not in "test" env', function(){
             var private = {privateFunc: function(){}};
-            assert.isTrue(_.isEmpty(service.build({private: private})));
+            var result = service.build({private: private});
+            assert.isTrue(_.isEmpty(result));
+            expect(_.keys(result)).to.have.length(0);
         });
 
         it('should return public and private properties when both properties types passed and app is in "test" env', function(){
@@ -44,6 +47,7 @@ describe('node-encapsulation suite: ', function () {
           var result = service.build({public: public, private: private})
 
           expect(result).to.have.all.keys(['privateFunc', 'publicFunc']);
+          expect(_.keys(result)).to.have.length(2);
 
         });
 
@@ -56,10 +60,11 @@ describe('node-encapsulation suite: ', function () {
           };
           process.env.NODE_ENV = 'testing';
           service.configure({env:'testing'})
-          
+
           var result = service.build({public: public, private: private})
 
           expect(result).to.have.all.keys(['privateFunc', 'publicFunc']);
+          expect(_.keys(result)).to.have.length(2);
 
         });
 

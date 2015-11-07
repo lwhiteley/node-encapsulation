@@ -5,17 +5,17 @@ self._config = {
 };
 
 self.configure = function(config){
-  if( _.isObject(config) ){
+  if( _.isPlainObject(config) ){
     self._config = _.merge(self._config, config);
   }
 };
 
 self.build = function(value){
   var result = {}
-  if(_.isObject(value) && _.isObject(value.public) && !_.isArray(value.public) ){
+  if(_.isPlainObject(value) && _.isPlainObject(value.public) ){
     result = value.public;
     if(process.env.NODE_ENV && (process.env.NODE_ENV === self._config.env) &&
-        _.isObject(value.private) && !_.isArray(value.private) ){
+        _.isPlainObject(value.private) ){
 
       result = _.merge(value.private, result);
 
